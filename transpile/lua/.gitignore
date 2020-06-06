@@ -1,0 +1,4 @@
+/src/*.o
+/src/liblua.a
+/index.js
+/index.wasm

@@ -1,0 +1,41 @@
+{
+   "private": true,
+   "workspaces": [
+      "transpile"
+   ],
+   "devDependencies": {
+      "@typescript-eslint/eslint-plugin": "2.34.0",
+      "eslint": "6.8.0",
+      "eslint-config-airbnb-typescript": "7.2.1",
+      "eslint-config-prettier": "6.11.0",
+      "eslint-plugin-import": "2.20.2",
+      "npm-run-all": "4.1.5",
+      "prettier": "2.0.5",
+      "typescript": "3.9.3"
+   },
+   "scripts": {
+      "lint": "run-s lint:*",
+      "lint:eslint": "eslint \"**/*.ts\" --max-warnings 0",
+      "lint:prettier": "prettier \"**/*.{ts,js,json}\" --check",
+      "fix": "run-s fix:*",
+      "fix:eslint": "yarn lint:eslint --fix",
+      "fix:prettier": "yarn lint:prettier --write"
+   },
+   "eslintConfig": {
+      "extends": [
+         "airbnb-typescript/base",
+         "plugin:@typescript-eslint/recommended",
+         "plugin:@typescript-eslint/recommended-requiring-type-checking",
+         "prettier",
+         "prettier/@typescript-eslint"
+      ],
+      "parserOptions": {
+         "project": "./tsconfig.json"
+      }
+   },
+   "prettier": {
+      "tabWidth": 3,
+      "printWidth": 90,
+      "singleQuote": true
+   }
+}
